@@ -3,3 +3,8 @@ C:\Practice\APRCalculator\LoanProducts\bin\Debug\LoanProducts.pdb
 C:\Practice\APRCalculator\LoanProducts\obj\Debug\LoanProducts.dll
 C:\Practice\APRCalculator\LoanProducts\obj\Debug\LoanProducts.pdb
 C:\Practice\APRCalculator\LoanProducts\obj\Debug\LoanProducts.csprojResolveAssemblyReference.cache
+C:\Github\APRCalculator\LoanProducts\bin\Debug\LoanProducts.dll
+C:\Github\APRCalculator\LoanProducts\bin\Debug\LoanProducts.pdb
+C:\Github\APRCalculator\LoanProducts\obj\Debug\LoanProducts.csprojResolveAssemblyReference.cache
+C:\Github\APRCalculator\LoanProducts\obj\Debug\LoanProducts.dll
+C:\Github\APRCalculator\LoanProducts\obj\Debug\LoanProducts.pdb

@@ -12,7 +12,8 @@ namespace LoanProducts {
         SemiMonthlyLastDay,
         Monthly,
         MonthlyLastDay,
-        FixedDays
+        FixedDays,
+        Manual
     }
 
     public enum FeesType {

@@ -148,6 +148,8 @@ namespace LoanProducts {
                         schedule.payments.Add(new Payment(counter + 1, new DateTime(lastDay.Year, lastDay.Month, last)));
                     }
                     break;
+                case ScheduleType.Manual:
+                    break;
             }
 
             return schedule;
