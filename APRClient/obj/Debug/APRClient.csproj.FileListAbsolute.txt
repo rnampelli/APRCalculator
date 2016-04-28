@@ -9,3 +9,11 @@ C:\Practice\APRCalculator\APRClient\bin\Debug\LoanProducts.pdb
 C:\Github\APRCalculator\APRClient\bin\Debug\APRClient.exe.config
 C:\Github\APRCalculator\APRClient\obj\Debug\APRClient.exe
 C:\Github\APRCalculator\APRClient\obj\Debug\APRClient.pdb
+C:\Git\APRCalculator\APRClient\bin\Debug\APRClient.exe.config
+C:\Git\APRCalculator\APRClient\obj\Debug\APRClient.exe
+C:\Git\APRCalculator\APRClient\obj\Debug\APRClient.pdb
+C:\Git\APRCalculator\APRClient\bin\Debug\APRClient.exe
+C:\Git\APRCalculator\APRClient\bin\Debug\APRClient.pdb
+C:\Git\APRCalculator\APRClient\bin\Debug\LoanProducts.dll
+C:\Git\APRCalculator\APRClient\bin\Debug\LoanProducts.pdb
+C:\Git\APRCalculator\APRClient\obj\Debug\APRClient.csprojResolveAssemblyReference.cache
