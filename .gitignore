@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+APRClient/obj/Debug
+APRClient/bin/Debug
+APRClient/bin/Release

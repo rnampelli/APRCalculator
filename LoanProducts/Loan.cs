@@ -32,7 +32,7 @@ namespace LoanProducts {
         }
 
         public void AddInterestTier(decimal MinAmount, decimal MaxAmount, decimal Value) {
-
+            this.InterestTiers.Add(new InterestTier(MinAmount, MaxAmount, Value));
         }
 
         private void Initialize(decimal Amount, DateTime Date, int GracePeriod, int paymentCount, InterestType interestType,
