@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace LoanProducts {
     public class Loan {
+        public decimal requestAmount { get; set; }
         public decimal amount { get; set; }
         public DateTime date { get; set; }
         public int gracePeriod { get; set; }
         public int paymentCount { get; set; }
         public PaymentSchedule schedule { get; set; }
         public List<InterestTier> InterestTiers { get; set; }
+        public List<Fee> Fees { get; set; }
         public InterestType InterestType;
         public PaymentScheduleGenerator scheduler;
         public decimal APR { get; set; }
-        public FeesType FeeType { get; set; }
+        public DateTime ContractEndDate { get; set; }
         public decimal FeeRate { get; set; }
         private decimal principal { get; set; }
         private decimal serviceCharge { get; set; }
@@ -35,18 +37,43 @@ namespace LoanProducts {
             this.InterestTiers.Add(new InterestTier(MinAmount, MaxAmount, Value));
         }
 
+        public void AddFee(string Name, FeesType Type, decimal Amount, DateTime Date, bool AccruedInterestOn, bool IsProrated) {
+            this.Fees.Add(new Fee(Name, Type, Amount, Date, AccruedInterestOn, IsProrated));
+        }
+
         private void Initialize(decimal Amount, DateTime Date, int GracePeriod, int paymentCount, InterestType interestType,
                 ScheduleType ScheduleType, DateTime payDate1, DateTime payDate2, FeesType FeeType, Decimal FeeRate) {
-            this.amount = Amount;
+            this.requestAmount = Amount;
             this.date = Date;
             this.gracePeriod = GracePeriod;
             this.paymentCount = paymentCount;
             this.InterestTiers = new List<InterestTier>();
             this.InterestType = interestType;
-            this.FeeType = FeeType;
             this.FeeRate = FeeRate;
             scheduler = new PaymentScheduleGenerator(this);
             this.schedule = scheduler.generateSchedule(payDate1, payDate2, (ScheduleType)ScheduleType);
+            this.ContractEndDate = this.schedule.payments.OrderBy(x => x.date).Last().date;
+            this.Fees = new List<Fee>();
+
         }
+
+        public decimal durationThroughLoan(DateTime asOf) {
+            if (asOf > this.date)
+                return asOf.Date.Subtract(this.date.Date).Days / this.ContractEndDate.Date.Subtract(this.date.Date).Days;
+            else
+                return 0.00m;
+        }
+
+        public decimal ProratedFees(DateTime fromDate, DateTime toDate) {
+            var proratedFees = this.Fees.Where(x => x.isProrated == true);
+
+            int days = toDate.Date.Subtract(fromDate.Date).Days;
+            if (proratedFees.Count() > 0)
+                return proratedFees.Sum(x => x.Amount);
+            else
+                return 0.00m;
+        }
+
+        
     }
 }

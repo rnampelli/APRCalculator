@@ -18,7 +18,8 @@ namespace LoanProducts {
 
     public enum FeesType {
         Regular,
-        Discounted
+        Discounted,
+        Fixed
     }
 
     public enum InterestType {
